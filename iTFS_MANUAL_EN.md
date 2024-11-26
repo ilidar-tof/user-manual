@@ -663,6 +663,8 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 - **sync_cmd_port**: The port number of the device that sent the synchronization command.
 - **sync_elapsed_time_us**: The time elapsed in microseconds (**us**) since the last synchronization signal was received.
 
+![sync_ack](./images/sync_ack.png)
+
 ## 7. How to Handle Image and Point Cloud
 
 ### 7-1. Image Data
