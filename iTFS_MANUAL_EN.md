@@ -1,9 +1,10 @@
 # HYBO | iLidar-ToF | iTFS Series User Manual (EN)
-V 1.1.4 (21- Nov.-2024)
+V 1.1.5 (01- May.-2025)
 
 ![top](./images/top.png)
 
 # INDEX
+- [HYBO | iLidar-ToF | iTFS Series User Manual (EN)](#hybo--ilidar-tof--itfs-series-user-manual-en)
 - [INDEX](#index)
 - [1. Important Information](#1-important-information)
   - [1-1. Notification](#1-1-notification)
@@ -36,23 +37,23 @@ V 1.1.4 (21- Nov.-2024)
 - [5. Sensor Operation](#5-sensor-operation)
   - [5-1. Network Configuration](#5-1-network-configuration)
     - [5-1-1. Windows](#5-1-1-windows)
-    - [5-1-2. Linux(Ubuntu)](#5-1-2-linuxubuntu)
-  - [5-2. iViewer:Simple iLidar Data Viewer](#5-2-iviewersimple-ilidar-data-viewer)
+    - [5-1-2. Linux (Ubuntu)](#5-1-2-linux-ubuntu)
+  - [5-2. iViewer: Simple iLidar Data Viewer](#5-2-iviewer-simple-ilidar-data-viewer)
 - [6. Packets and Parameters](#6-packets-and-parameters)
   - [6-1. Basic Packet Structure](#6-1-basic-packet-structure)
-  - [6-2. List of ID](#6-2-list-of-id)
+  - [6-2. List of IDs](#6-2-list-of-ids)
   - [6-3. IMG Packet](#6-3-img-packet)
   - [6-4. STATUS Packet](#6-4-status-packet)
   - [6-5. STATUS\_FULL Packet](#6-5-status_full-packet)
   - [6-6. INFO Packet](#6-6-info-packet)
   - [6-7. INFO\_V2 Packet](#6-7-info_v2-packet)
   - [6-8. CMD Packet](#6-8-cmd-packet)
-  - [6-9. SYNC\_ACK Packet](#6-9-sync_ack-packet)
-- [7. How to Handle Image and Point Cloud](#7-how-to-handle-image-and-point-cloud)
-  - [7-1. Image Data](#7-1-image-data)
-    - [7-1-1. Capture Row](#7-1-1-capture-row)
-    - [7-1-2. Binning](#7-1-2-binning)
-    - [7-1-3. Accumulating Image Packet](#7-1-3-accumulating-image-packet)
+    - [6-9. SYNC\_ACK Packet](#6-9-sync_ack-packet)
+  - [7. How to Handle Image and Point Cloud](#7-how-to-handle-image-and-point-cloud)
+    - [7-1. Image Data](#7-1-image-data)
+      - [7-1-1. Capture Row](#7-1-1-capture-row)
+      - [7-1-2. Binning](#7-1-2-binning)
+    - [7-1-3. Accumulating Image Packets](#7-1-3-accumulating-image-packets)
   - [7-2. Point Cloud](#7-2-point-cloud)
     - [7-2-1. Image Coordiantes to LiDAR Local Coordinates](#7-2-1-image-coordiantes-to-lidar-local-coordinates)
     - [7-2-2. LiDAR Local Coordinates to World Coordinates](#7-2-2-lidar-local-coordinates-to-world-coordinates)
@@ -65,7 +66,7 @@ V 1.1.4 (21- Nov.-2024)
   - [10-2. Synchronization Methods](#10-2-synchronization-methods)
     - [10-2-1. UDP Synchronization](#10-2-1-udp-synchronization)
     - [10-2-2. Trigger Synchronization](#10-2-2-trigger-synchronization)
-    - [10-2-3. Optical Synchronization (in development)](#10-2-3-optical-synchronization-in-development)
+    - [10-2-3. Optical Synchronization (In Development)](#10-2-3-optical-synchronization-in-development)
   - [10-3. Fine-Tuning Time Window](#10-3-fine-tuning-time-window)
   - [10-4. Multi Sensor Examples](#10-4-multi-sensor-examples)
 - [11. Sensor Maintenance Guide](#11-sensor-maintenance-guide)
@@ -75,7 +76,14 @@ V 1.1.4 (21- Nov.-2024)
     - [11-1-3. Optical Windows](#11-1-3-optical-windows)
   - [11-2. Warning Code](#11-2-warning-code)
   - [11-3. Factory Reset](#11-3-factory-reset)
+    - [For iTFS Series Firmware **V 1.4.X**:](#for-itfs-series-firmware-v-14x)
+    - [For iTFS Series Firmware **V 1.5.X or Later**:](#for-itfs-series-firmware-v-15x-or-later)
 - [12. FAQ](#12-faq)
+  - [Q1. The product is connected to the PC, but no data is being received.](#q1-the-product-is-connected-to-the-pc-but-no-data-is-being-received)
+    - [1. Check if the LiDAR is operating properly:](#1-check-if-the-lidar-is-operating-properly)
+    - [2. Check if LiDAR data is being received:](#2-check-if-lidar-data-is-being-received)
+    - [3. Check the firewall settings:](#3-check-the-firewall-settings)
+- [13. Known Issues](#13-known-issues)
   
 # 1. Important Information
 ## 1-1. Notification
@@ -432,7 +440,7 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 - **sensor_vcsel_level**, **sensor_vcsel_on**, **sensor_power_level**, **sensor_power_on**, **sensor_level**: Provide voltage information for the sensor's laser and power supply. The actual voltage (V) can be calculated by dividing these values by 100. They also include voltage response data over time for debugging purposes.
 - **sensor_warning**: Contains warning flags that indicate any abnormalities detected in the sensor.
 
-### 6-6. INFO Packet
+## 6-6. INFO Packet
 - The INFO packet contains operational information about the sensor. This packet can either be sent from the sensor to the user (READ) or from the user to the sensor (WRITE). It is available in firmware version 1.4.X.
 
 |      Name       | Index | Size |  Type  | Authority | Description                                                                                             |
@@ -1022,3 +1030,7 @@ Please check the following:
 - If a firewall is active:
   - Disable the firewall and test whether data can now be received.
 - If disabling the firewall does not resolve the issue, please contact the A/S center.
+
+# 13. Known Issues
+
+- If you set the value of **capture_seq** to 1 and set HDR level 4 (assigning a non-zero value to the 4th value of **capture_shutter**), the depth and intensity image are not output correctly. Please set the value of **capture_seq** to 0, or set the 4th value of **capture_shutter** to 0.

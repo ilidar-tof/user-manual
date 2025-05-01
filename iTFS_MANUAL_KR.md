@@ -1,9 +1,10 @@
 # HYBO | iLidar-ToF | iTFS Series User Manual (KR)
-V 1.1.4 (21- Nov.-2024)
+V 1.1.5 (01- May.-2025)
 
 ![top](./images/top.png)
 
 # INDEX
+- [HYBO | iLidar-ToF | iTFS Series User Manual (KR)](#hybo--ilidar-tof--itfs-series-user-manual-kr)
 - [INDEX](#index)
 - [1. Important Information](#1-important-information)
   - [1-1. Notification](#1-1-notification)
@@ -75,7 +76,14 @@ V 1.1.4 (21- Nov.-2024)
     - [11-1-3. Optical Windows](#11-1-3-optical-windows)
   - [11-2. Warning Code](#11-2-warning-code)
   - [11-3. Factory Reset](#11-3-factory-reset)
+    - [iTFS 시리즈 펌웨어 **V 1.4.X**:](#itfs-시리즈-펌웨어-v-14x)
+    - [iTFS 시리즈 펌웨어 **V 1.5.X 이상**:](#itfs-시리즈-펌웨어-v-15x-이상)
 - [12. FAQ](#12-faq)
+  - [Q1. PC에 제품을 연결했는데, 데이터가 제대로 수신되지 않습니다.](#q1-pc에-제품을-연결했는데-데이터가-제대로-수신되지-않습니다)
+    - [1. 라이다 동작 여부 확인](#1-라이다-동작-여부-확인)
+    - [2. 라이다 데이터 수신 여부 확인](#2-라이다-데이터-수신-여부-확인)
+    - [3. 방화벽 상태 확인](#3-방화벽-상태-확인)
+- [13. Known Issues](#13-known-issues)
 
 # 1. Important Information
 ## 1-1. Notification
@@ -957,3 +965,7 @@ V 1.1.4 (21- Nov.-2024)
 - 따라서, Windows 혹은 타 OS에서 해당 소켓에 방화벽 설정 여부를 점검하시기 바랍니다.
 - 방화벽이 설정 되어있다면, 방화벽을 해제한 후 데이터 수신을 확인하십시오.
 - 방화벽 해제 이후에도 문제가 해결되지 않으면, A/S 센터로 연락 부탁드립니다.
+
+# 13. Known Issues
+
+- **capture_seq** 의 값을 1로 설정한 상태로 4단계 HDR의 설정 (**capture_shutter**의 4번째 값에 0이 아닌 값을 할당) 하는 경우, 센서의 깊이 및 세기 이미지 값이 정상적으로 출력되지 않는 문제가 있습니다. 불필요한 경우 **capture_seq**의 값을 0으로 설정하거나, **capture_shutter**의 4번째 값을 0으로 설정하여 주시기 바랍니다.
