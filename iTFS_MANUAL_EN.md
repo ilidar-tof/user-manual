@@ -127,16 +127,16 @@ V 1.1.5 (01- May.-2025)
 
 ![kc](./images/kc.png)
 
-|     Item      |            Certification Details             |
-| :-----------: | :------------------------------------------: |
-|     Company    |                HYBO Inc.              |
-|   Product Name |                  iLidar-ToF                 |
-|    Model      |           iTFS-110 / iTFS-80                |
-| Certification No. |           R-R-h2b-iTFS-110               |
-| Manufacturer  |                HYBO Inc.              |
-| Manufacturing Country |             South Korea              |
-| Manufacturing Date |     YYYY-MM (Refer to hard copy document)       |
-| A/S Center   |                   +82-2-597-4905                |
+|         Item          |         Certification Details         |
+| :-------------------: | :-----------------------------------: |
+|        Company        |               HYBO Inc.               |
+|     Product Name      |              iLidar-ToF               |
+|         Model         |          iTFS-110 / iTFS-80           |
+|   Certification No.   |           R-R-h2b-iTFS-110            |
+|     Manufacturer      |               HYBO Inc.               |
+| Manufacturing Country |              South Korea              |
+|  Manufacturing Date   | YYYY-MM (Refer to hard copy document) |
+|      A/S Center       |            +82-2-597-4905             |
 
 ### 1-4-2. CE
 - TBD
@@ -144,17 +144,17 @@ V 1.1.5 (01- May.-2025)
 ### 1-4-3. IEC 60825-1:2014
 - The iTFS series complies with the IEC 60825-1:2014 standard for eye safety and has obtained international certification under the CB Scheme. Details are as follows:
 
-|    Item      |          Details           |
-| :--: | :--: |
-| Report Number | CB2024-00128 |
-| Date of issue | June 28, 2024 |
-| Standard | IEC 60825-1:2014 |
-| Test procedure | CB Scheme |
-| Test item | Lidar |
-| Manufacturer | HYBO |
-| Model/Type reference | iTFS-110 |
-| Ratings | (PoE) DC 48V, 12W(300mA) / (molex) 12VDC, 12W(1A) |
-| Class | Class 1 laser product |
+|         Item         |                      Details                      |
+| :------------------: | :-----------------------------------------------: |
+|    Report Number     |                   CB2024-00128                    |
+|    Date of issue     |                   June 28, 2024                   |
+|       Standard       |                 IEC 60825-1:2014                  |
+|    Test procedure    |                     CB Scheme                     |
+|      Test item       |                       Lidar                       |
+|     Manufacturer     |                       HYBO                        |
+| Model/Type reference |                     iTFS-110                      |
+|       Ratings        | (PoE) DC 48V, 12W(300mA) / (molex) 12VDC, 12W(1A) |
+|        Class         |               Class 1 laser product               |
 
 # 2. Sensor Overview
 ## 2-1. iLidar-ToF
@@ -204,19 +204,21 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 - FoV: Range-guaranteed scope. Working horizontal FoVs are 120° and 90° for iTFS-110 and iTS-80 respectively.
 
 ### 2-4-2. Commonalities
-|     Features      |                    iTFS-110 & iTFS-80                    |
-| :---------------: | :------------------------------------------------------: |
-|     Accuracy      |   Error level: ± (3~5 cm + 2% of distance measurement)   |
-|     Framerate     | Typ. 12.5 Hz (Up to 20 Hz with heatsink and reduced RoI) |
-|    Dimensions     |               115.0 mm × 46.0 mm × 31.5 mm               |
-|      Weight       |                         200.0 g                          |
-|       Power       |         Avg. 6.0 W / Max. 12.0 W (12VDC or PoE)          |
-|     Interface     |                UDP (RJ-45) / UART (Molex)                |
-|      Output       |                Depth and Intensity Images                |
-|   Certification   | IEC 60825-1:2014, KC(R-R-h2b-iTFS-110), CE(Comming soon) |
-| Sunlight Immunity |       ~ 33 klux (80% ranging performance @ mode2)        |
-|   Illumination    |                     940-nm IR Laser                      |
-|    Eye safety     |           CLASS 1 (based on IEC 60825-1:2014)            |
+|      Features       |                               iTFS-110 & iTFS-80                               |
+| :-----------------: | :----------------------------------------------------------------------------: |
+|      Accuracy       |              Error level: ± (3~5 cm + 2% of distance measurement)              |
+|      Framerate      |            Typ. 12.5 Hz (Up to 20 Hz with heatsink and reduced RoI)            |
+|     Dimensions      |                          115.0 mm × 46.0 mm × 31.5 mm                          |
+|       Weight        |                                    200.0 g                                     |
+|        Power        |                    Avg. 6.0 W / Max. 12.0 W (12VDC or PoE)                     |
+|      Interface      |                           UDP (RJ-45) / UART (Molex)                           |
+|       Output        |                           Depth and Intensity Images                           |
+|    Certification    |            IEC 60825-1:2014, KC(R-R-h2b-iTFS-110), CE(Comming soon)            |
+|  Sunlight Immunity  |                  ~ 33 klux (80% ranging performance @ mode2)                   |
+|    Illumination     |                                940-nm IR Laser                                 |
+|     Eye safety      |                      CLASS 1 (based on IEC 60825-1:2014)                       |
+| Operating Condition | Case temperature: –10 °C  to +65 °C <br> Humidity: 0 ~ 90 % RH, non‑condensing |
+|  Absolute Maximum   | Case temperature: –25 °C  to +70 °C <br> Humidity: 0 ~ 90 % RH, non‑condensing |
 
 # 3. Mechanical Parts
 ## 3-1. What's in the box?
@@ -404,10 +406,10 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 ## 6-5. STATUS_FULL Packet
 - The STATUS_FULL packet provides detailed information about the sensor's current state, including temperature, voltage, and status flags. The PAYLOAD structure of the STATUS_FULL packet is as follows:
 
-|        Name         | Index |  Size  |   Type   | Description                                                      |
+|        Name         | Index |  Size  |   Type   | Description                                                     |
 | :-----------------: | :---: | :----: | :------: | :-------------------------------------------------------------- |
 |    capture_mode     |   0   |   1    | uint8_t  | Mode: 0 = GRAY, 1 = MODE1 (NB), 2 = MODE2 (VB), 3 = MODE3 (HV)  |
-|    capture_frame    |   1   |   1    | uint8_t  | Frame number, repeats from 0 to 63                               |
+|    capture_frame    |   1   |   1    | uint8_t  | Frame number, repeats from 0 to 63                              |
 |      sensor_sn      |   2   |   2    | uint16_t | Serial number                                                   |
 |   sensor_time_th    |   4   |   8    | uint64_t | Sensor time in *ms*                                             |
 |   sensor_time_tl    |  12   |   2    | uint16_t | Sensor time in *us*                                             |
@@ -814,11 +816,11 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 
 | mode  | SH1 | SH2 | SH3 | SH4 | HDR Level |
 | :---: | :-: | :-: | :-: | :-: | :-------: |
-|  2,3  |  >0  |  >0  |  >0  |  >0  |     4     |
-|   1   |  >0  |  >0  |  >0  |  >0  |     3     |
-| 1,2,3 |  >0  |  >0  |  >0  |  0  |     3     |
-| 1,2,3 |  >0  |  >0  |  0  |  0  |     2     |
-| 1,2,3 |  >0  |  0  |  0  |  0  |     1     |
+|  2,3  | >0  | >0  | >0  | >0  |     4     |
+|   1   | >0  | >0  | >0  | >0  |     3     |
+| 1,2,3 | >0  | >0  | >0  |  0  |     3     |
+| 1,2,3 | >0  | >0  |  0  |  0  |     2     |
+| 1,2,3 | >0  |  0  |  0  |  0  |     1     |
 
 - To ensure proper HDR depth image acquisition, configure the settings such that **SH1 > SH2 > SH3 > SH4**.
 
@@ -905,11 +907,11 @@ The iLidar ToF: iTFS sensor uses the iToF method for distance measurement, which
 - Next, set the **sync_delay** for each sensors:
 
 | Sensors | sync_delay |
-| :---------------: | :--------: |
-|      iTFS_A       |     0      |
-|      iTFS_B       |     20     |
-|      iTFS_C       |     40     |
-|      iTFS_D       |     60     |
+| :-----: | :--------: |
+| iTFS_A  |     0      |
+| iTFS_B  |     20     |
+| iTFS_C  |     40     |
+| iTFS_D  |     60     |
 
 - Connect the PC and the iTFS sensors as shown in the diagram below, and configure the PC to periodically broadcast the **CMD_SYNC** packet (approximately once every 2–3 minutes).
 

@@ -144,17 +144,17 @@ V 1.1.5 (01- May.-2025)
 ### 1-4-3. IEC 60825-1:2014
 - iTFS 시리즈는 940-nm 대역의 레이저를 사용하는 능동 센서로써, Eye-safety를 위해 IEC 60825-1:2014 표준을 준수하였고, CB Scheme에 따라 국제 인증을 획득하였습니다. 아래에서 관련 정보를 확인할 수 있습니다.
 
-| 구분 | 내용 |
-| :--: | :--: |
-| Report Number | CB2024-00128 |
-| Date of issue | June 28, 2024 |
-| Standard | IEC 60825-1:2014 |
-| Test procedure | CB Scheme |
-| Test item | Lidar |
-| Manufacturer | HYBO |
-| Model/Type reference | iTFS-110 |
-| Ratings | (PoE) DC 48V, 12W(300mA) / (molex) 12VDC, 12W(1A) |
-| Class | Class 1 laser product |
+|         구분         |                       내용                        |
+| :------------------: | :-----------------------------------------------: |
+|    Report Number     |                   CB2024-00128                    |
+|    Date of issue     |                   June 28, 2024                   |
+|       Standard       |                 IEC 60825-1:2014                  |
+|    Test procedure    |                     CB Scheme                     |
+|      Test item       |                       Lidar                       |
+|     Manufacturer     |                       HYBO                        |
+| Model/Type reference |                     iTFS-110                      |
+|       Ratings        | (PoE) DC 48V, 12W(300mA) / (molex) 12VDC, 12W(1A) |
+|        Class         |               Class 1 laser product               |
 
 # 2. Sensor Overview
 ## 2-1. iLidar-ToF
@@ -199,19 +199,21 @@ V 1.1.5 (01- May.-2025)
 - FoV: Range-guaranteed scope. Working horizontal FoVs are 120° and 90° for iTFS-110 and iTS-80 respectively.
 
 ### 2-4-2. Commonalities
-|     Features      |                    iTFS-110 & iTFS-80                    |
-| :---------------: | :------------------------------------------------------: |
-|     Accuracy      |   Error level: ± (3~5 cm + 2% of distance measurement)   |
-|     Framerate     | Typ. 12.5 Hz (Up to 20 Hz with heatsink and reduced RoI) |
-|    Dimensions     |               115.0 mm × 46.0 mm × 31.5 mm               |
-|      Weight       |                         200.0 g                          |
-|       Power       |         Avg. 6.0 W / Max. 12.0 W (12VDC or PoE)          |
-|     Interface     |                UDP (RJ-45) / UART (Molex)                |
-|      Output       |                Depth and Intensity Images                |
-|   Certification   | IEC 60825-1:2014, KC(R-R-h2b-iTFS-110), CE(Comming soon) |
-| Sunlight Immunity |       ~ 33 klux (80% ranging performance @ mode2)        |
-|   Illumination    |                     940-nm IR Laser                      |
-|    Eye safety     |           CLASS 1 (based on IEC 60825-1:2014)            |
+|      Features       |                               iTFS-110 & iTFS-80                               |
+| :-----------------: | :----------------------------------------------------------------------------: |
+|      Accuracy       |              Error level: ± (3~5 cm + 2% of distance measurement)              |
+|      Framerate      |            Typ. 12.5 Hz (Up to 20 Hz with heatsink and reduced RoI)            |
+|     Dimensions      |                          115.0 mm × 46.0 mm × 31.5 mm                          |
+|       Weight        |                                    200.0 g                                     |
+|        Power        |                    Avg. 6.0 W / Max. 12.0 W (12VDC or PoE)                     |
+|      Interface      |                           UDP (RJ-45) / UART (Molex)                           |
+|       Output        |                           Depth and Intensity Images                           |
+|    Certification    |            IEC 60825-1:2014, KC(R-R-h2b-iTFS-110), CE(Comming soon)            |
+|  Sunlight Immunity  |                  ~ 33 klux (80% ranging performance @ mode2)                   |
+|    Illumination     |                                940-nm IR Laser                                 |
+|     Eye safety      |                      CLASS 1 (based on IEC 60825-1:2014)                       |
+| Operating Condition | Case temperature: –10 °C  to +65 °C <br> Humidity: 0 ~ 90 % RH, non‑condensing |
+|  Absolute Maximum   | Case temperature: –25 °C  to +70 °C <br> Humidity: 0 ~ 90 % RH, non‑condensing |
 
 # 3. Mechanical Parts
 ## 3-1. What's in the box?
@@ -762,11 +764,11 @@ V 1.1.5 (01- May.-2025)
 
 | mode  | SH1 | SH2 | SH3 | SH4 | HDR Level |
 | :---: | :-: | :-: | :-: | :-: | :-------: |
-|  2,3  |  >0  |  >0  |  >0  |  >0  |     4     |
-|   1   |  >0  |  >0  |  >0  |  >0  |     3     |
-| 1,2,3 |  >0  |  >0  |  >0  |  0  |     3     |
-| 1,2,3 |  >0  |  >0  |  0  |  0  |     2     |
-| 1,2,3 |  >0  |  0  |  0  |  0  |     1     |
+|  2,3  | >0  | >0  | >0  | >0  |     4     |
+|   1   | >0  | >0  | >0  | >0  |     3     |
+| 1,2,3 | >0  | >0  | >0  |  0  |     3     |
+| 1,2,3 | >0  | >0  |  0  |  0  |     2     |
+| 1,2,3 | >0  |  0  |  0  |  0  |     1     |
 
 - 정상적인 HDR 깊이 이미지 취득을 위해, **SH1 > SH2 > SH3 > SH4** 를 만족하도록 설정해 주시기 바랍니다.
 
@@ -852,11 +854,11 @@ V 1.1.5 (01- May.-2025)
 - 다음으로, 각 센서별 **sync_delay**를 다음과 같이 설정합니다.
 
 | Sensors | sync_delay |
-| :---------------: | :--------: |
-|      iTFS_A       |     0      |
-|      iTFS_B       |     20     |
-|      iTFS_C       |     40     |
-|      iTFS_D       |     60     |
+| :-----: | :--------: |
+| iTFS_A  |     0      |
+| iTFS_B  |     20     |
+| iTFS_C  |     40     |
+| iTFS_D  |     60     |
 
 - PC 와 iTFS 센서들을 아래 그림과 같이 연결하고, PC에서 CMD_SYNC 패킷을 주기적(약 2~3분에 1회)으로 broadcasting하도록 세팅합니다.
 
